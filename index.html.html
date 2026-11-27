@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ฉันมีจีพียู | ร้านการ์ดจอออนไลน์</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;700;800&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#fff;--ink:#0a0a0a;--mute:#5d5d5d;--line:#0a0a0a;--red:#b4001a;--red2:#7d0010;--soft:#f4f2f2;--on-red:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 "IBM Plex Sans Thai","Noto Sans Thai",Tahoma,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.logo{font:800 1em/1 Prompt,"Noto Sans Thai",Tahoma,sans-serif;letter-spacing:-.01em;white-space:nowrap}
+.logo .r{background:radial-gradient(circle at 20% 30%,var(--red) 0 40%,transparent 41%) 0 0/7px 7px,linear-gradient(135deg,var(--red),var(--red2) 55%,var(--red));-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo .k{color:var(--ink)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:2px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.bar{display:flex;align-items:center;justify-content:space-between;height:62px;gap:12px}
+.bar .logo{font-size:26px;text-decoration:none}
+nav{display:flex;gap:22px;font-weight:500}
+nav a{text-decoration:none}nav a:hover{color:var(--red)}
+.cartbtn{font:600 15px "IBM Plex Sans Thai",sans-serif;background:var(--ink);color:var(--bg);border:0;padding:9px 16px;cursor:pointer}
+.cartbtn b{background:var(--red);color:var(--on-red);padding:1px 8px;margin-left:8px}
+.hero{position:relative;overflow:hidden;padding:72px 0 64px;border-bottom:2px solid var(--line)}
+.hero svg.trace{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.trace path{fill:none;stroke:var(--red);stroke-width:2;opacity:.55;stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.4s ease-out .2s forwards}
+.trace circle{fill:var(--red);opacity:0;animation:pop .4s ease-out 2.2s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}@keyframes pop{to{opacity:.9}}
+.hero .wrap{position:relative;z-index:1}
+.hero .logo{font-size:clamp(56px,15.5vw,172px);padding-bottom:.1em}
+.hero p{font-size:clamp(18px,2.6vw,24px);max-width:30em;margin:18px 0 28px;font-weight:500}
+.btn{display:inline-block;font:700 16px Prompt,sans-serif;padding:14px 26px;border:2px solid var(--ink);text-decoration:none;cursor:pointer;background:transparent;color:var(--ink)}
+.btn.main{background:var(--red);border-color:var(--red);color:var(--on-red)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.hero .btn+.btn{margin-left:10px}
+section{padding:60px 0}
+h2{font:800 clamp(30px,5vw,46px)/1.15 Prompt,sans-serif;margin:0 0 6px}
+.sub{color:var(--mute);margin:0 0 28px}
+.tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.tab{font:600 15px "IBM Plex Sans Thai",sans-serif;padding:7px 18px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.list{border-top:2px solid var(--line)}
+.row{display:grid;grid-template-columns:120px 1fr auto auto;gap:20px;align-items:center;padding:16px 4px;border-bottom:1px solid var(--line)}
+.row svg{width:120px;height:56px;color:var(--ink)}
+.row h3{font:700 20px/1.3 Prompt,sans-serif;margin:0}
+.spec{color:var(--mute);font-size:14px;margin:2px 0 0}
+.tag{display:inline-block;font:600 12px "IBM Plex Sans Thai",sans-serif;background:var(--red);color:var(--on-red);padding:0 8px;margin-left:8px;vertical-align:middle}
+.price{font:800 22px Prompt,sans-serif;text-align:right;white-space:nowrap}
+.add{font:700 15px Prompt,sans-serif;padding:10px 18px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.add:hover{background:var(--red);border-color:var(--red);color:var(--on-red)}
+.why{background:var(--soft);border-block:2px solid var(--line)}
+.why ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.why li{padding:6px 28px 6px 0;border-left:4px solid var(--red);padding-left:18px;margin-right:24px}
+.why strong{display:block;font:700 20px Prompt,sans-serif}
+.why span{color:var(--mute)}
+footer{padding:40px 0 48px}
+footer .logo{font-size:40px}
+footer p{color:var(--mute);margin:10px 0 0}
+#shade{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:40;display:none}
+#drawer{position:fixed;top:0;right:0;bottom:0;width:min(400px,100%);background:var(--bg);border-left:2px solid var(--line);z-index:50;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column;padding:calc(18px + env(safe-area-inset-top,0px)) 20px calc(18px + env(safe-area-inset-bottom,0px))}
+#drawer.open{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center}
+.dh h3{font:800 24px Prompt,sans-serif;margin:0}
+.x{font-size:28px;background:none;border:0;color:var(--ink);cursor:pointer;line-height:1}
+#items{flex:1;overflow:auto;margin:14px 0}
+.it{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
+.it small{color:var(--mute);display:block}
+.qty{display:flex;align-items:center;gap:8px;margin-top:4px}
+.qty button{width:28px;height:28px;border:2px solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-weight:700}
+.empty{color:var(--mute);padding:20px 0}
+.tot{display:flex;justify-content:space-between;font:800 22px Prompt,sans-serif;margin-bottom:12px}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--ink);color:var(--bg);padding:10px 20px;font-weight:600;opacity:0;transition:.25s;z-index:60;pointer-events:none;max-width:90%}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+@media (max-width:760px){
+nav{display:none}
+.row{grid-template-columns:84px 1fr auto;gap:12px}
+.row svg{width:84px;height:44px}
+.price{grid-column:2;text-align:left}
+.add{grid-column:3;grid-row:1/3;align-self:center}
+.why ul{grid-template-columns:1fr;gap:24px}
+.hero .btn+.btn{margin:10px 0 0}
+}
+@media (prefers-reduced-motion:reduce){.trace path{animation:none;stroke-dashoffset:0}.trace circle{animation:none;opacity:.9}#drawer,#toast{transition:none}.btn:hover{transform:none}}
+:root{--ink:#141212;--mute:#8c8686;--line:#ebe8e8;--soft:#faf9f9;--red:#c0172d;--red2:#8f0e1f}
+header{border-bottom:1px solid var(--line)}
+.bar{height:68px}
+nav{gap:32px;font-weight:400;color:var(--mute)}
+nav a:hover{color:var(--ink)}
+.cartbtn{background:none;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 18px;font-weight:500}
+.cartbtn b{background:var(--ink);color:var(--bg);border-radius:999px;font-size:13px;padding:0 8px}
+.hero{padding:120px 0 104px;border:0}
+.hero .logo{font-size:clamp(48px,12.5vw,136px)}
+.hero p{color:var(--mute);font-weight:400;margin:22px 0 36px}
+.trace path{stroke-width:1.2;opacity:.22}
+.trace circle{opacity:.5}
+@keyframes pop{to{opacity:.5}}
+.btn{border:1px solid var(--ink);border-radius:999px;font-weight:500;padding:13px 28px}
+.btn.main{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn:hover{transform:none;box-shadow:none;background:var(--red);border-color:var(--red);color:#fff}
+section{padding:72px 0}
+h2{font-weight:700;letter-spacing:-.01em}
+.tabs{gap:22px;margin-bottom:8px}
+.tab{border:0;border-bottom:2px solid transparent;padding:6px 0;color:var(--mute);font-weight:500}
+.tab[aria-pressed="true"]{background:none;color:var(--ink);border-bottom-color:var(--red)}
+.list{border-top:1px solid var(--line)}
+.row{padding:26px 4px;border-bottom:1px solid var(--line)}
+.row h3{font-weight:700;font-size:19px}
+.row svg{color:#bdb8b8}
+.tag{background:none;color:var(--red);border:1px solid var(--red);border-radius:999px;font-size:11px;padding:0 9px}
+.price{font-weight:700;font-size:20px}
+.add{border:1px solid var(--line);border-radius:999px;font-weight:500;padding:9px 20px}
+.add:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.why{background:var(--soft);border:0}
+.why li{border-left:1px solid var(--line);margin-right:0}
+.why strong{font-weight:700;font-size:18px}
+footer{border-top:1px solid var(--line)}
+#drawer{border-left:1px solid var(--line);box-shadow:-12px 0 40px rgba(0,0,0,.06)}
+#shade{background:rgba(255,255,255,.6)}
+.qty button{border:1px solid var(--line);border-radius:50%}
+#toast{border-radius:999px;bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+html{-webkit-text-size-adjust:100%}
+a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.wrap{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.thumb{display:block}.nm{text-decoration:none}.nm:hover{color:var(--red)}
+.tab,.add,.cartbtn,.btn{min-height:44px}
+.qty button{width:40px;height:40px}
+#pv{position:fixed;inset:0;z-index:35;background:var(--bg);overflow:auto;overscroll-behavior:contain;display:none}
+#pv.on{display:block}
+.pvtop{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.pvtop .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.back{text-decoration:none;font-weight:500;display:inline-flex;align-items:center;min-height:44px}
+.pvg{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;padding:36px 0 20px;align-items:start}
+.vis{background:var(--soft);border-radius:20px;padding:28px 12px 18px}
+.vis svg{width:100%;height:auto;display:block;color:var(--ink)}
+.vis small{display:block;text-align:center;color:var(--mute);margin-top:6px;font-size:13px}
+.spin{transform-origin:0 0;animation:spin 3s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.pvg h1{font:800 clamp(28px,5vw,44px)/1.15 Prompt,sans-serif;margin:0 0 8px}
+.pvg .pr{font:800 28px Prompt,sans-serif;margin:14px 0}
+.pvg .ds{color:var(--mute);margin:0 0 22px}
+.sp{margin:0;border-top:1px solid var(--line)}
+.sp div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.sp dt{color:var(--mute)}.sp dd{margin:0;font-weight:500;text-align:right}
+.note{color:var(--mute);font-size:13px;margin:12px 0 0}
+.pn{display:flex;justify-content:space-between;gap:16px;padding:8px 0 28px}
+.pn a{text-decoration:none;font-weight:500;color:var(--mute);min-height:44px;display:inline-flex;align-items:center}.pn a:hover{color:var(--red)}
+.buy{position:sticky;bottom:0;z-index:2;background:var(--bg);border-top:1px solid var(--line);padding:12px 0 calc(12px + env(safe-area-inset-bottom,0px))}
+.buy .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.buy .p{font:800 22px Prompt,sans-serif}
+.buy .add{background:var(--ink);color:var(--bg);border-color:var(--ink);padding:12px 32px;font-size:16px}
+.buy .add:hover{background:var(--red);border-color:var(--red);color:#fff}
+#mbar{display:none}
+@media (max-width:760px){
+.pvg{grid-template-columns:1fr;gap:20px;padding-top:16px}
+.vis{border-radius:16px}
+.hero{padding:64px 0 56px}
+.hero .btn{display:block;text-align:center;width:100%}
+.hero .btn+.btn{margin:10px 0 0}
+section{padding:52px 0}
+.tabs{overflow-x:auto;flex-wrap:nowrap;white-space:nowrap}
+.row{padding:20px 0}
+.add{padding:10px 16px}
+.buy .add{flex:1;padding:12px 16px}
+#drawer{width:100%;border-left:0}
+body{padding-bottom:84px}
+#toast{bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+#mbar{position:fixed;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:34;justify-content:space-between;align-items:center;min-height:52px;padding:0 22px;background:var(--ink);color:var(--bg);border:0;border-radius:999px;font:600 16px "IBM Plex Sans Thai",sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+#mbar.on{display:flex}
+}
+:root[data-theme="dark"]{--bg:#0e0c0c;--ink:#f4efef;--mute:#9a9292;--line:#2c2626;--soft:#171313;--red:#ff4660;--red2:#c0172d;color-scheme:dark}
+:root[data-theme="dark"] #shade{background:rgba(0,0,0,.6)}
+:root[data-theme="dark"] #drawer{box-shadow:-12px 0 40px rgba(0,0,0,.5)}
+.act{display:flex;gap:8px;align-items:center}
+.tbtn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--ink);cursor:pointer;display:grid;place-items:center}
+.tbtn:hover{border-color:var(--ink)}
+.tools{display:flex;gap:10px;margin:0 0 14px;flex-wrap:wrap}
+.tools input,.tools select{font:400 16px "IBM Plex Sans Thai",sans-serif;min-height:44px;border:1px solid var(--line);border-radius:999px;background:var(--bg);color:var(--ink);padding:0 18px}
+.tools input{flex:1;min-width:200px}
+.tools input:focus,.tools select:focus{border-color:var(--ink)}
+@media (max-width:760px){.tools input,.tools select{flex:1 1 100%}}
+.thumb{position:relative}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;border-radius:8px}
+.pic{position:relative}
+.pic img{display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;border-radius:12px}
+.vis.has .pic{aspect-ratio:4/3}
+.vis.has .pic svg{display:none}
+.vis.has .pic img{display:block}
+.vis.has .fk{display:none}
+#co{position:fixed;inset:0;z-index:45;background:var(--bg);overflow:auto;overscroll-behavior:contain;display:none}
+#co.on{display:block}
+button.back{background:none;border:0;color:var(--ink);font:inherit;cursor:pointer;padding:0}
+.cog{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;padding:32px 0 24px;align-items:start}
+.ch{font:800 22px Prompt,sans-serif;margin:28px 0 12px}
+.fld{margin-bottom:14px}.fld label{display:block;font-weight:500;margin-bottom:6px}
+.fld input,.fld textarea{width:100%;font:400 16px "IBM Plex Sans Thai",sans-serif;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);padding:12px 14px;min-height:46px}
+.fld textarea{resize:vertical}
+.fld input:focus,.fld textarea:focus{border-color:var(--ink)}
+.fld.bad input,.fld.bad textarea{border-color:var(--red)}
+.er{display:none;color:var(--red);font-size:13px;margin-top:4px}.fld.bad .er{display:block}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.opt{display:flex;gap:12px;align-items:center;padding:14px 16px;border:1px solid var(--line);border-radius:14px;cursor:pointer;margin-bottom:10px;min-height:56px}
+.opt:has(input:checked){border-color:var(--ink)}
+.opt input{accent-color:var(--red);width:20px;height:20px;flex:none;margin:0}
+.opt span{flex:1}.opt b{font-weight:700;white-space:nowrap}
+.pnote{color:var(--mute);font-size:14px;margin:4px 0 0}
+.sumbox{background:var(--soft);border-radius:16px;padding:20px;position:sticky;top:76px}
+.sl{display:flex;justify-content:space-between;gap:12px;padding:6px 0}
+.sl.t{border-top:1px solid var(--line);margin-top:8px;padding-top:12px;font:800 20px Prompt,sans-serif}
+.free{color:var(--red);font-size:13px;margin:4px 0 0}
+.okic{width:64px;height:64px;color:var(--red)}
+.qrb{background:#fff;padding:14px;border-radius:12px;width:220px;margin:14px 0 6px}
+.badge{display:inline-block;border:1px solid var(--red);color:var(--red);border-radius:999px;padding:0 12px;font-weight:600;font-size:14px;margin-left:6px}
+@media (max-width:760px){.cog{grid-template-columns:1fr;gap:8px;padding-top:20px}.sumbox{position:static}}
+.cbtn{font:700 16px Prompt,sans-serif;min-height:44px;border:1px solid var(--ink);border-radius:999px;background:var(--ink);color:var(--bg);cursor:pointer;padding:12px 32px}
+.cbtn:hover{background:var(--red);border-color:var(--red);color:#fff}
+@media (max-width:760px){.buy .cbtn{flex:1;padding:12px 16px}}
+@media (prefers-reduced-motion:reduce){.spin{animation:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="gpu" viewBox="0 0 120 56"><rect x="2" y="4" width="112" height="40" rx="3" fill="none" stroke="currentColor" stroke-width="3"/><rect x="114" y="10" width="4" height="28" fill="currentColor"/><circle cx="34" cy="24" r="14" fill="none" stroke="#b4001a" stroke-width="3"/><circle cx="34" cy="24" r="4" fill="#b4001a"/><circle cx="82" cy="24" r="14" fill="none" stroke="#b4001a" stroke-width="3"/><circle cx="82" cy="24" r="4" fill="#b4001a"/><path d="M14 48v6M22 48v6M30 48v6M38 48v6M46 48v6M54 48v6" stroke="currentColor" stroke-width="3"/></symbol></svg>
+
+<header><div class="wrap bar">
+<a class="logo" href="#top" aria-label="ฉันมีจีพียู"><span class="r">ฉัน</span><span class="k">มี</span><span class="r">จีพียู</span></a>
+<nav><a href="#shop">สินค้า</a><a href="#why">ทำไมต้องเรา</a><a href="#contact">ติดต่อ</a></nav>
+<div class="act"><button class="tbtn" id="theme" aria-label="สลับโหมดมืด"></button><button class="cartbtn" id="open" aria-label="เปิดตะกร้า">ตะกร้า<b id="count">0</b></button></div>
+</div></header>
+
+<main id="top">
+<div class="hero">
+<svg class="trace" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<path d="M0 90H220L270 140H620L660 100H1200"/><path d="M0 440H300L350 390H760L810 440H1200"/><path d="M1200 250H960L920 290H700"/><path d="M0 260H110L150 220"/>
+<circle cx="220" cy="90" r="6"/><circle cx="660" cy="100" r="6"/><circle cx="350" cy="390" r="6"/><circle cx="810" cy="440" r="6"/><circle cx="700" cy="290" r="6"/><circle cx="150" cy="220" r="6"/>
+</svg>
+<div class="wrap">
+<div class="logo" role="img" aria-label="ฉันมีจีพียู"><span class="r">ฉัน</span><span class="k">มี</span><span class="r">จีพียู</span></div>
+<p>การ์ดจอแท้ ประกันศูนย์ 3 ปี แพ็กแน่น ส่งทั่วไทยภายใน 1-2 วัน</p>
+<a class="btn main" href="#shop">เลือกการ์ดจอ</a><a class="btn" href="#contact">ปรึกษาเลือกรุ่น</a>
+</div></div>
+
+<section id="shop"><div class="wrap">
+<h2>การ์ดจอพร้อมส่ง</h2>
+<p class="sub">ราคาตัวอย่างสำหรับแบบร่างเว็บไซต์ แก้ไขรายการสินค้าได้ตามจริง</p>
+<div class="tabs" role="group" aria-label="กรองตามยี่ห้อ">
+<button class="tab" aria-pressed="true" data-f="all">ทั้งหมด</button><button class="tab" aria-pressed="false" data-f="NVIDIA">NVIDIA</button><button class="tab" aria-pressed="false" data-f="AMD">AMD</button><button class="tab" aria-pressed="false" data-f="Intel">Intel</button>
+</div>
+<div class="tools"><input id="q" type="search" placeholder="ค้นหารุ่น เช่น 5070, Radeon, Arc" aria-label="ค้นหาการ์ดจอ"><select id="sort" aria-label="เรียงตาม"><option value="def">เรียง: แนะนำ</option><option value="lo">ราคาต่ำไปสูง</option><option value="hi">ราคาสูงไปต่ำ</option></select></div>
+<div class="list" id="list"></div>
+<p class="empty" id="none" hidden>ไม่พบรุ่นที่ค้นหา ลองพิมพ์ชื่อรุ่นอื่น หรือกดแท็บ ทั้งหมด</p>
+</div></section>
+
+<section class="why" id="why"><div class="wrap">
+<h2>ซื้อแล้วสบายใจ</h2><p class="sub">สิ่งที่ลูกค้าได้ทุกออเดอร์</p>
+<ul>
+<li><strong>ของแท้ ประกันศูนย์</strong><span>ทุกชิ้นมีใบรับประกันและเลขซีเรียลตรวจสอบได้</span></li>
+<li><strong>ทดสอบก่อนส่ง</strong><span>เปิดกล่องเช็กสภาพและรันเทสต์ทุกครั้ง ไม่ส่งของมีตำหนิ</span></li>
+<li><strong>ช่วยเลือกรุ่นให้ฟรี</strong><span>บอกงบและงานที่ใช้ ทีมงานจะแนะนำรุ่นที่คุ้มที่สุด</span></li>
+</ul></div></section>
+</main>
+
+<footer id="contact"><div class="wrap">
+<div class="logo"><span class="r">ฉัน</span><span class="k">มี</span><span class="r">จีพียู</span></div>
+<p>แชทสอบถาม: LINE @ihavegpu (ตัวอย่าง) | เปิดทุกวัน 10:00-20:00 น.</p>
+<p>© 2026 ฉันมีจีพียู</p>
+</div></footer>
+
+<div id="pv" tabindex="-1" role="dialog" aria-label="รายละเอียดสินค้า"><div class="pvtop"><div class="wrap"><a class="back" href="#shop">‹ กลับไปหน้าสินค้า</a><button class="cartbtn" data-cart aria-label="เปิดตะกร้า">ตะกร้า<b class="cnt">0</b></button></div></div><div id="pvc"></div></div>
+<div id="co" role="dialog" aria-label="ชำระเงิน"></div>
+<button id="mbar" data-cart><span></span><b></b></button>
+<div id="shade"></div>
+<aside id="drawer" aria-label="ตะกร้าสินค้า" aria-hidden="true">
+<div class="dh"><h3>ตะกร้าสินค้า</h3><button class="x" id="close" aria-label="ปิดตะกร้า">×</button></div>
+<div id="items"></div>
+<div class="tot"><span>รวม</span><span id="total">฿0</span></div>
+<button class="btn main" id="pay">สั่งซื้อ</button>
+</aside>
+<div id="toast" role="status"></div>
+
+<script>
+var P=[
+{id:1,n:"GeForce RTX 5090",b:"NVIDIA",s:"VRAM 32GB GDDR7 | 4K เต็มสปีด",p:119900,t:"แรงสุด"},
+{id:2,n:"GeForce RTX 5080",b:"NVIDIA",s:"VRAM 16GB GDDR7 | 4K ลื่นๆ",p:49900},
+{id:3,n:"GeForce RTX 5070 Ti",b:"NVIDIA",s:"VRAM 16GB GDDR7 | 1440p ขั้นสุด",p:32900,t:"ขายดี"},
+{id:4,n:"Radeon RX 9070 XT",b:"AMD",s:"VRAM 16GB GDDR6 | 1440p คุ้มราคา",p:24900,t:"คุ้มสุด"},
+{id:5,n:"GeForce RTX 5060 Ti 16GB",b:"NVIDIA",s:"VRAM 16GB GDDR7 | 1080p-1440p",p:17900},
+{id:6,n:"Radeon RX 9060 XT 16GB",b:"AMD",s:"VRAM 16GB GDDR6 | เกมมิ่งงบประหยัด",p:14500},
+{id:7,n:"Intel Arc B580",b:"Intel",s:"VRAM 12GB GDDR6 | 1080p-1440p งบเบา",p:9900,t:"ราคาเบาสุด"}
+];
+var D={
+1:{d:"แรงสุดในตระกูล เหมาะกับเกม 4K ตั้งค่าสูงสุด งานตัดต่อวิดีโอ และงาน AI",s:[["หน่วยความจำ","32GB GDDR7"],["บัสหน่วยความจำ","512-bit"],["CUDA Cores","21,760"],["บูสต์คล็อก","ราว 2,407 MHz"],["กำลังไฟการ์ด","575W"],["พาวเวอร์ซัพพลายแนะนำ","1000W"],["พอร์ตจอภาพ","3 x DisplayPort, 1 x HDMI"]]},
+2:{d:"เล่นเกม 4K ลื่นๆ ด้วยราคาที่เข้าถึงง่ายกว่ารุ่นท็อป เหมาะกับสายเกมและสายครีเอเตอร์",s:[["หน่วยความจำ","16GB GDDR7"],["บัสหน่วยความจำ","256-bit"],["CUDA Cores","10,752"],["บูสต์คล็อก","ราว 2,617 MHz"],["กำลังไฟการ์ด","360W"],["พาวเวอร์ซัพพลายแนะนำ","850W"],["พอร์ตจอภาพ","3 x DisplayPort, 1 x HDMI"]]},
+3:{d:"จุดสมดุลของราคากับประสิทธิภาพ เล่นเกม 1440p ตั้งค่าสูงได้สบาย และรองรับ 4K บางเกม",s:[["หน่วยความจำ","16GB GDDR7"],["บัสหน่วยความจำ","256-bit"],["CUDA Cores","8,960"],["บูสต์คล็อก","ราว 2,452 MHz"],["กำลังไฟการ์ด","300W"],["พาวเวอร์ซัพพลายแนะนำ","750W"],["พอร์ตจอภาพ","3 x DisplayPort, 1 x HDMI"]]},
+4:{d:"ตัวเลือกฝั่ง AMD ที่คุ้มราคา เล่นเกม 1440p ได้ลื่น และ VRAM 16GB เผื่ออนาคต",s:[["หน่วยความจำ","16GB GDDR6"],["บัสหน่วยความจำ","256-bit"],["Stream Processors","4,096"],["บูสต์คล็อก","สูงสุดราว 2,970 MHz"],["กำลังไฟการ์ด","304W"],["พาวเวอร์ซัพพลายแนะนำ","750W"],["พอร์ตจอภาพ","2 x DisplayPort, 1 x HDMI"]]},
+5:{d:"รุ่นกลางที่มี VRAM 16GB กินไฟน้อย เหมาะกับเกม 1080p ถึง 1440p และเครื่องขนาดเล็ก",s:[["หน่วยความจำ","16GB GDDR7"],["บัสหน่วยความจำ","128-bit"],["CUDA Cores","4,608"],["บูสต์คล็อก","ราว 2,572 MHz"],["กำลังไฟการ์ด","180W"],["พาวเวอร์ซัพพลายแนะนำ","650W"],["พอร์ตจอภาพ","3 x DisplayPort, 1 x HDMI"]]},
+6:{d:"เริ่มต้นเล่นเกมในงบประหยัด VRAM 16GB กินไฟต่ำ ใช้กับพาวเวอร์ซัพพลายทั่วไปได้",s:[["หน่วยความจำ","16GB GDDR6"],["บัสหน่วยความจำ","128-bit"],["Stream Processors","2,048"],["บูสต์คล็อก","สูงสุดราว 3,130 MHz"],["กำลังไฟการ์ด","160W"],["พาวเวอร์ซัพพลายแนะนำ","450W"],["พอร์ตจอภาพ","2 x DisplayPort, 1 x HDMI"]]}
+};
+var IB="";
+function imgSrc(id){return IB+"images/gpu-"+id+".jpg"}
+function thumb(id){return '<svg aria-hidden="true"><use href="#gpu"/></svg><img src="'+imgSrc(id)+'" alt="" loading="lazy" onerror="this.remove()">'}
+var cart={},f="all";
+function fmt(n){return "฿"+n.toLocaleString("th-TH")}
+function draw(){
+var h="";
+view().forEach(function(x){
+h+='<div class="row"><a class="thumb" href="#p-'+x.id+'" aria-label="ดูรายละเอียด '+x.n+'">'+thumb(x.id)+'</a><div><h3><a class="nm" href="#p-'+x.id+'">'+x.n+'</a>'+(x.t?'<span class="tag">'+x.t+'</span>':'')+'</h3><p class="spec">'+x.s+'</p></div><div class="price">'+fmt(x.p)+'</div><button class="add" data-id="'+x.id+'" aria-label="เพิ่ม '+x.n+' ลงตะกร้า">ใส่ตะกร้า</button></div>';
+});
+document.getElementById("list").innerHTML=h;
+document.getElementById("none").hidden=!!h;
+}
+function render(){
+var ids=Object.keys(cart),h="",t=0,c=0;
+ids.forEach(function(i){var x=P.filter(function(y){return y.id==i})[0],q=cart[i];t+=x.p*q;c+=q;
+h+='<div class="it"><div><strong>'+x.n+'</strong><small>'+fmt(x.p)+'</small><div class="qty"><button data-d="-1" data-id="'+i+'" aria-label="ลดจำนวน">-</button><span>'+q+'</span><button data-d="1" data-id="'+i+'" aria-label="เพิ่มจำนวน">+</button></div></div><strong>'+fmt(x.p*q)+'</strong></div>';});
+document.getElementById("items").innerHTML=h||'<p class="empty">ตะกร้ายังว่างอยู่ เลือกการ์ดจอที่ชอบแล้วกด ใส่ตะกร้า</p>';
+document.getElementById("total").textContent=fmt(t);
+document.getElementById("count").textContent=c;
+document.querySelectorAll(".cnt").forEach(function(e){e.textContent=c});
+var m=document.getElementById("mbar");m.classList.toggle("on",c>0);m.querySelector("span").textContent="ดูตะกร้า ("+c+")";m.querySelector("b").textContent=fmt(t);
+}
+function toast(m){var e=document.getElementById("toast");e.textContent=m;e.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(function(){e.classList.remove("on")},1800)}
+function drawer(o){document.getElementById("drawer").classList.toggle("open",o);document.getElementById("drawer").setAttribute("aria-hidden",!o);document.getElementById("shade").style.display=o?"block":"none"}
+document.addEventListener("click",function(e){
+var t=e.target;
+if(t.classList.contains("add")){var i=t.dataset.id;cart[i]=(cart[i]||0)+1;render();toast("ใส่ตะกร้าแล้ว")}
+if(t.dataset.d){var i=t.dataset.id;cart[i]+=+t.dataset.d;if(cart[i]<1)delete cart[i];render()}
+if(t.classList.contains("tab")){f=t.dataset.f;document.querySelectorAll(".tab").forEach(function(b){b.setAttribute("aria-pressed",b==t)});draw()}
+if(t.closest("#open"))drawer(true);
+if(t.id=="close"||t.id=="shade")drawer(false);
+if(t.id=="pay"){if(Object.keys(cart).length){drawer(false);openCO()}else toast("ตะกร้ายังว่างอยู่")}
+});
+document.addEventListener("keydown",function(e){if(e.key=="Escape")drawer(false)});
+function fan(x){var b="";for(var i=0;i<7;i++)b+='<path d="M0 0C8 -5 20 -16 17 -32C5 -26 -3 -14 0 0Z" transform="rotate('+(i*51.43).toFixed(1)+')"/>';return '<g transform="translate('+x+' 95)"><circle r="42" fill="none" stroke="currentColor" stroke-width="2" opacity=".3"/><g class="spin" fill="#c0172d">'+b+'</g><circle r="6" fill="currentColor"/></g>'}
+var SVG='<svg viewBox="0 0 400 200" role="img" aria-label="ภาพประกอบการ์ดจอ"><rect x="12" y="28" width="350" height="136" rx="10" fill="none" stroke="currentColor" stroke-width="3"/><rect x="12" y="28" width="350" height="10" rx="5" fill="#c0172d"/><rect x="362" y="48" width="14" height="96" fill="currentColor"/><rect x="44" y="164" width="150" height="14" fill="currentColor" opacity=".35"/>'+fan(112)+fan(262)+'</svg>';
+function pv(id){
+var i=P.findIndex(function(y){return y.id==id}),x=P[i],d=D[id],pr=P[(i+P.length-1)%P.length],nx=P[(i+1)%P.length];
+var r=d.s.map(function(a){return '<div><dt>'+a[0]+'</dt><dd>'+a[1]+'</dd></div>'}).join("");
+document.getElementById("pvc").innerHTML='<div class="wrap"><div class="pvg"><div class="vis"><div class="pic">'+SVG+'<img data-pic src="'+imgSrc(id)+'" alt="'+x.n+'"></div><small class="fk">ใบพัดหมุนเพื่อพรีวิว | ภาพประกอบ ไม่ใช่รูปสินค้าจริง</small></div><div><h1>'+x.n+(x.t?' <span class="tag">'+x.t+'</span>':'')+'</h1><div class="pr">'+fmt(x.p)+'</div><p class="ds">'+d.d+'</p><dl class="sp">'+r+'</dl><p class="note">สเปกอ้างอิงตามรุ่นมาตรฐาน อาจต่างกันตามผู้ผลิตและรุ่นย่อย</p></div></div><div class="pn"><a href="#p-'+pr.id+'">‹ '+pr.n+'</a><a href="#p-'+nx.id+'">'+nx.n+' ›</a></div></div><div class="buy"><div class="wrap"><div class="p">'+fmt(x.p)+'</div><button class="add" data-id="'+x.id+'">ใส่ตะกร้า</button></div></div>';
+}
+function route(){
+var m=/^#p-(\d+)$/.exec(location.hash),e=document.getElementById("pv");
+if(m&&D[m[1]]){pv(m[1]);e.classList.add("on");e.scrollTop=0;document.body.style.overflow="hidden";e.focus({preventScroll:true})}
+else{e.classList.remove("on");document.body.style.overflow=""}
+}
+addEventListener("hashchange",route);
+document.addEventListener("click",function(e){if(e.target.closest("[data-cart]"))drawer(true)});
+document.addEventListener("keydown",function(e){if(e.key=="Escape"&&document.getElementById("pv").classList.contains("on")&&!document.getElementById("drawer").classList.contains("open"))location.hash="shop"});
+function openPV(id){if(!D[id])return;var e=document.getElementById("pv");pv(id);e.classList.add("on");e.scrollTop=0;document.body.style.overflow="hidden";try{e.focus({preventScroll:true})}catch(x){}}
+function closePV(){var e=document.getElementById("pv");e.classList.remove("on");document.body.style.overflow=""}
+document.addEventListener("click",function(e){
+var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;
+e.preventDefault();
+var h=a.getAttribute("href"),m=/^#p-(\d+)$/.exec(h);
+if(m){try{history.replaceState(null,"",h)}catch(x){}openPV(m[1]);return}
+var was=document.getElementById("pv").classList.contains("on");
+closePV();
+try{history.replaceState(null,"",location.pathname+location.search)}catch(x){}
+var t=document.getElementById(h.slice(1));
+if(t)setTimeout(function(){t.scrollIntoView({behavior:was?"auto":"smooth",block:"start"})},0);
+});
+document.addEventListener("keydown",function(e){if(e.key=="Escape")closePV()});
+D[7]={d:"ตัวเลือกจากฝั่ง Intel ที่ราคาเบา แต่ให้ VRAM 12GB เล่นเกม 1080p ได้ลื่น และไปต่อ 1440p ได้ในหลายเกม เหมาะกับคนเริ่มต้นประกอบเครื่อง",s:[["หน่วยความจำ","12GB GDDR6"],["บัสหน่วยความจำ","192-bit"],["Xe-cores","20"],["ความเร็วคล็อก","ราว 2,670 MHz"],["กำลังไฟการ์ด","190W"],["พาวเวอร์ซัพพลายแนะนำ","600W"],["พอร์ตจอภาพ","3 x DisplayPort, 1 x HDMI"]]};
+function view(){
+var q=document.getElementById("q").value.trim().toLowerCase(),s=document.getElementById("sort").value;
+var a=P.filter(function(x){return (f=="all"||x.b==f)&&(!q||(x.n+" "+x.b+" "+x.s).toLowerCase().indexOf(q)>-1)});
+if(s=="lo")a=a.slice().sort(function(m,n){return m.p-n.p});
+if(s=="hi")a=a.slice().sort(function(m,n){return n.p-m.p});
+return a}
+var MOON='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+var SUN='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);var b=document.getElementById("theme");b.innerHTML=t=="dark"?SUN:MOON;b.setAttribute("aria-label",t=="dark"?"สลับเป็นโหมดสว่าง":"สลับเป็นโหมดมืด");try{localStorage.setItem("th",t)}catch(x){}}
+document.addEventListener("click",function(e){if(e.target.closest&&e.target.closest("#theme"))setTheme(document.documentElement.getAttribute("data-theme")=="dark"?"light":"dark")});
+document.getElementById("q").addEventListener("input",draw);
+document.getElementById("sort").addEventListener("change",draw);
+var t0="light";try{t0=localStorage.getItem("th")=="dark"?"dark":"light"}catch(x){}
+setTheme(t0);
+document.addEventListener("load",function(e){var t=e.target;if(t&&t.tagName=="IMG"&&t.hasAttribute("data-pic")){var v=t.closest(".vis");if(v)v.classList.add("has")}},true);
+var SHIP={std:{n:"ส่งธรรมดา (1-3 วัน)",p:60},exp:{n:"ส่งด่วน (ถึงภายในวันถัดไป)",p:120},pick:{n:"รับที่ร้าน",p:0}};
+var co={ship:"std",pay:"pp",done:null};
+function el(i){return document.getElementById(i)}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function cartTotal(){var t=0;Object.keys(cart).forEach(function(i){var x=P.filter(function(y){return y.id==i})[0];t+=x.p*cart[i]});return t}
+function shipFee(){return co.ship=="std"&&cartTotal()>=20000?0:SHIP[co.ship].p}
+function fld(id,l,tag,at){return '<div class="fld"><label for="'+id+'">'+l+'</label><'+tag+' id="'+id+'" '+at+(tag=="input"?'>':'></textarea>')+'<div class="er" id="e-'+id+'"></div></div>'}
+function pnote(){return co.pay=="pp"?"กดยืนยันแล้วจะได้ QR PromptPay จำลองสำหรับสแกน ยังไม่มีการตัดเงินจริง":co.pay=="card"?"จำลอง เว็บจริงจะเชื่อมกับผู้ให้บริการชำระเงิน เช่น Omise หรือ Stripe ซึ่งให้กรอกบัตรบนหน้าที่ปลอดภัยของเขา จึงไม่มีช่องกรอกเลขบัตรที่นี่":"จ่ายเงินสดให้พนักงานส่งของเมื่อรับสินค้า หรือจ่ายที่ร้านถ้าเลือกรับที่ร้าน"}
+function drawCO(){
+el("co").innerHTML='<div class="pvtop"><div class="wrap"><button class="back" type="button" data-co="back">‹ กลับไปตะกร้า</button><strong>ชำระเงิน (จำลอง)</strong><span style="width:70px"></span></div></div><div class="wrap"><div class="cog"><div><p class="pnote">หน้านี้เป็นระบบจำลอง ไม่มีการตัดเงิน และไม่มีการส่งข้อมูลออกจากเครื่องของคุณ</p><h2 class="ch" style="margin-top:12px">1. ข้อมูลจัดส่ง</h2>'+fld("f-name","ชื่อ-นามสกุล","input",'autocomplete="name"')+fld("f-phone","เบอร์โทร","input",'type="tel" inputmode="numeric" autocomplete="tel" placeholder="0812345678"')+'<div id="addr">'+fld("f-addr","ที่อยู่จัดส่ง","textarea",'rows="3" autocomplete="street-address" placeholder="บ้านเลขที่ ถนน ตำบล/แขวง อำเภอ/เขต"')+'<div class="two">'+fld("f-prov","จังหวัด","input",'autocomplete="address-level1"')+fld("f-zip","รหัสไปรษณีย์","input",'inputmode="numeric" maxlength="5" autocomplete="postal-code"')+'</div></div><h2 class="ch">2. วิธีจัดส่ง</h2><div id="shipopts"></div><h2 class="ch">3. ชำระเงิน</h2><div id="payopts"></div><p class="pnote" id="pnote"></p></div><div><div class="sumbox" id="sum"></div></div></div></div><div class="buy"><div class="wrap"><div class="p" id="btot"></div><button class="cbtn" type="button" data-co="confirm">ยืนยันสั่งซื้อ</button></div></div>';
+opts();updateSum()}
+function opts(){var sub=cartTotal(),h="";
+Object.keys(SHIP).forEach(function(k){var p=k=="std"&&sub>=20000?0:SHIP[k].p;h+='<label class="opt"><input type="radio" name="ship" value="'+k+'"'+(co.ship==k?" checked":"")+'><span>'+SHIP[k].n+'</span><b>'+(p?fmt(p):"ฟรี")+'</b></label>'});
+el("shipopts").innerHTML=h;h="";
+[["pp","PromptPay (สแกน QR)"],["card","บัตรเครดิตหรือเดบิต"],["cod","เก็บเงินปลายทาง"]].forEach(function(a){h+='<label class="opt"><input type="radio" name="pay" value="'+a[0]+'"'+(co.pay==a[0]?" checked":"")+'><span>'+a[1]+'</span></label>'});
+el("payopts").innerHTML=h;el("pnote").textContent=pnote()}
+function updateSum(){var sub=cartTotal(),fee=shipFee();
+var h='<h2 class="ch" style="margin-top:0">สรุปคำสั่งซื้อ</h2>';
+Object.keys(cart).forEach(function(i){var x=P.filter(function(y){return y.id==i})[0];h+='<div class="sl"><span>'+x.n+' × '+cart[i]+'</span><span>'+fmt(x.p*cart[i])+'</span></div>'});
+h+='<div class="sl"><span>ค่าสินค้า</span><span>'+fmt(sub)+'</span></div><div class="sl"><span>ค่าส่ง</span><span>'+(fee?fmt(fee):"ฟรี")+'</span></div>';
+if(co.ship=="std"&&sub<20000)h+='<p class="free">ซื้อเพิ่มอีก '+fmt(20000-sub)+' ส่งธรรมดาฟรี</p>';
+h+='<div class="sl t"><span>รวมทั้งหมด</span><span>'+fmt(sub+fee)+'</span></div>';
+el("sum").innerHTML=h;el("btot").textContent=fmt(sub+fee)}
+function openCO(){co.ship="std";co.pay="pp";co.done=null;drawCO();var e=el("co");e.classList.add("on");e.scrollTop=0;document.body.style.overflow="hidden"}
+function closeCO(){el("co").classList.remove("on");document.body.style.overflow=el("pv").classList.contains("on")?"hidden":""}
+function qr(seed){var n=25,s=seed,r="";
+function rnd(){s=(s*1103515245+12345)&2147483647;return s/2147483647}
+for(var y=0;y<n;y++)for(var x=0;x<n;x++){if((x<8&&y<8)||(x>=n-8&&y<8)||(x<8&&y>=n-8))continue;if(rnd()>.5)r+='<rect x="'+x+'" y="'+y+'" width="1" height="1"/>'}
+function fd(a,b){return '<rect x="'+a+'" y="'+b+'" width="7" height="7"/><rect x="'+(a+1)+'" y="'+(b+1)+'" width="5" height="5" fill="#fff"/><rect x="'+(a+2)+'" y="'+(b+2)+'" width="3" height="3"/>'}
+return '<svg viewBox="0 0 25 25" width="100%" role="img" aria-label="QR จำลอง"><rect width="25" height="25" fill="#fff"/><g fill="#111">'+r+fd(0,0)+fd(n-7,0)+fd(0,n-7)+'</g></svg>'}
+function showDone(){var o=co.done;
+var st=o.paid?"ชำระแล้ว (จำลอง)":o.pay=="pp"?"รอชำระเงิน":"ชำระเงินสดเมื่อรับสินค้า";
+var d=o.ship=="std"?3:1;
+var eta=o.ship=="pick"?"รับสินค้าที่ร้าน เมื่อได้รับข้อความยืนยันจากทางร้าน":"คาดว่าถึงภายใน "+new Date(Date.now()+d*864e5).toLocaleDateString("th-TH",{day:"numeric",month:"long",year:"numeric"});
+var q=o.pay=="pp"&&!o.paid?'<div class="qrb">'+qr(parseInt(o.id.slice(4),10))+'</div><p class="pnote">QR จำลอง สแกนจริงไม่ได้ ยอด '+fmt(o.total)+'</p><button class="btn" type="button" data-co="paid">จำลองว่าโอนเงินแล้ว</button>':"";
+var it=o.items.map(function(x){return '<div class="sl"><span>'+esc(x.n)+' × '+x.q+'</span><span>'+fmt(x.p*x.q)+'</span></div>'}).join("");
+el("co").innerHTML='<div class="pvtop"><div class="wrap"><span style="width:70px"></span><strong>สั่งซื้อสำเร็จ (จำลอง)</strong><button class="back" type="button" data-co="close">ปิด</button></div></div><div class="wrap" style="max-width:640px;padding-top:32px;padding-bottom:56px"><svg class="okic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg><h2 class="ch" style="margin-top:12px">ขอบคุณที่สั่งซื้อ</h2><p>เลขที่ออเดอร์ <b>'+o.id+'</b><span class="badge">'+st+'</span></p>'+q+'<h3 class="ch">จัดส่งไปที่</h3><p>'+esc(o.name)+', '+esc(o.phone)+'<br>'+esc(o.addr)+'</p><p>'+SHIP[o.ship].n+'<br>'+eta+'</p><h3 class="ch">รายการสินค้า</h3>'+it+'<div class="sl"><span>ค่าส่ง</span><span>'+(o.fee?fmt(o.fee):"ฟรี")+'</span></div><div class="sl t"><span>รวมทั้งหมด</span><span>'+fmt(o.total)+'</span></div><p class="pnote">หน้านี้เป็นการจำลอง ยังไม่มีออเดอร์หรือการตัดเงินจริง</p><p><button class="btn main" type="button" data-co="shop">กลับไปเลือกสินค้า</button></p></div>';
+el("co").scrollTop=0}
+function submit(){
+var ch=[["f-name",function(v){return v.trim().length>1},"กรอกชื่อและนามสกุล"],["f-phone",function(v){return /^0\d{8,9}$/.test(v.replace(/[\s-]/g,""))},"กรอกเบอร์โทรให้ถูกต้อง เช่น 0812345678"]];
+if(co.ship!="pick")ch.push(["f-addr",function(v){return v.trim().length>7},"กรอกที่อยู่ให้ครบ ทั้งบ้านเลขที่ ถนน ตำบลหรือแขวง อำเภอหรือเขต"],["f-prov",function(v){return v.trim().length>1},"กรอกจังหวัด"],["f-zip",function(v){return /^\d{5}$/.test(v)},"รหัสไปรษณีย์ต้องมี 5 หลัก"]);
+var first=null;
+ch.forEach(function(c){var i=el(c[0]),ok=c[1](i.value),f=i.closest(".fld");f.classList.toggle("bad",!ok);if(!ok){el("e-"+c[0]).textContent=c[2];if(!first)first=i}});
+if(first){first.focus();return}
+var sub=cartTotal(),fee=shipFee();
+var o={id:"GPU-"+Math.floor(100000+Math.random()*900000),items:Object.keys(cart).map(function(i){var x=P.filter(function(y){return y.id==i})[0];return {n:x.n,q:cart[i],p:x.p}}),sub:sub,fee:fee,total:sub+fee,ship:co.ship,pay:co.pay,paid:co.pay=="card",name:el("f-name").value.trim(),phone:el("f-phone").value.trim(),addr:co.ship=="pick"?"รับที่ร้าน":el("f-addr").value.trim()+" จ."+el("f-prov").value.trim()+" "+el("f-zip").value};
+cart={};render();co.done=o;showDone()}
+el("co").addEventListener("change",function(e){var t=e.target;if(t.name=="ship"){co.ship=t.value;el("addr").hidden=t.value=="pick";updateSum()}if(t.name=="pay"){co.pay=t.value;el("pnote").textContent=pnote()}});
+el("co").addEventListener("input",function(e){var f=e.target.closest&&e.target.closest(".fld");if(f)f.classList.remove("bad")});
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-co]");if(!b)return;var a=b.dataset.co;
+if(a=="back"){closeCO();drawer(true)}
+else if(a=="confirm")submit();
+else if(a=="paid"){co.done.paid=true;showDone()}
+else if(a=="close")closeCO();
+else if(a=="shop"){closeCO();closePV();var t=el("shop");if(t)t.scrollIntoView({block:"start"})}
+});
+draw();render();try{route()}catch(x){}
+</script>
+</body>
+</html>
